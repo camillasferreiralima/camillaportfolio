@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio de Divulgação Científica | INCT COESA</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+  <div class="app-container">
+    
+    <!-- Notion-like Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <span class="sidebar-logo">🧠</span>
+        <span class="sidebar-title">INCT COESA</span>
+      </div>
+      
+      <ul class="sidebar-menu">
+        <li class="sidebar-menu-item active" id="menu-letter">
+          <a onclick="app.scrollToSection('cover-letter-section')">
+            <span class="sidebar-menu-icon">📝</span>
+            <span class="sidebar-menu-item-text">Carta Apresentação</span>
+          </a>
+        </li>
+        <li class="sidebar-menu-item" id="menu-profile">
+          <a onclick="app.scrollToSection('profile-section')">
+            <span class="sidebar-menu-icon">👤</span>
+            <span class="sidebar-menu-item-text">Perfil do Candidato</span>
+          </a>
+        </li>
+        <li class="sidebar-menu-item" id="menu-portfolio">
+          <a onclick="app.scrollToSection('portfolio-section')">
+            <span class="sidebar-menu-icon">📱</span>
+            <span class="sidebar-menu-item-text">Acervo de Mídias</span>
+          </a>
+        </li>
+        <li class="sidebar-menu-item">
+          <a onclick="app.filterCategory('Posts')">
+            <span class="sidebar-menu-icon">🖼️</span>
+            <span class="sidebar-menu-item-text">Instagram Posts</span>
+          </a>
+        </li>
+        <li class="sidebar-menu-item">
+          <a onclick="app.filterCategory('Vídeos')">
+            <span class="sidebar-menu-icon">📹</span>
+            <span class="sidebar-menu-item-text">Instagram Reels</span>
+          </a>
+        </li>
+        <li class="sidebar-menu-item">
+          <a onclick="app.filterCategory('Livro')">
+            <span class="sidebar-menu-icon">📚</span>
+            <span class="sidebar-menu-item-text">Livros & Capítulos</span>
+          </a>
+        </li>
+        <li class="sidebar-menu-item">
+          <a onclick="app.filterCategory('Pôsters')">
+            <span class="sidebar-menu-icon">📜</span>
+            <span class="sidebar-menu-item-text">Pôsters Científicos</span>
+          </a>
+        </li>
+      </ul>
+      
+      <div class="sidebar-footer">
+        <button class="btn btn-primary btn-block" onclick="window.print()">
+          <span>📤</span> Exportar PDF (Concurso)
+        </button>
+        <button class="btn btn-secondary btn-block btn-sm" onclick="app.resetToDefaults()">
+          <span>🔄</span> Resetar Dados
+        </button>
+      </div>
+    </aside>
+    
+    <!-- Main Content Area -->
+    <main class="main-content">
+      
+      <!-- Page Cover Header -->
+      <div class="cover-wrapper">
+        <img src="assets/cover.png" alt="Neuroscience and One Health Cover Banner" class="cover-image" id="page-cover-img">
+        <div class="cover-overlay">
+          <button class="change-cover-btn" onclick="app.openCoverModal()">
+            <span>📷</span> Alterar Capa
+          </button>
+        </div>
+      </div>
+      
+      <!-- Page Cover Emoji -->
+      <div class="page-emoji-container" id="page-emoji-btn" onclick="app.changeEmoji()">🧠</div>
+      
+      <!-- Inner Content Container -->
+      <div class="content-container">
+        
+        <!-- Document Title Block -->
+        <header class="page-title-section">
+          <h1 class="page-title editable-field" contenteditable="true" id="portfolio-main-title" onblur="app.saveField('portfolio-main-title')">
+            Portfólio de Divulgação Científica
+          </h1>
+          <p class="page-description editable-field" contenteditable="true" id="portfolio-main-subtitle" onblur="app.saveField('portfolio-main-subtitle')">
+            Candidatura à Bolsa de Apoio à Difusão do Conhecimento (ADC-1B) • EDITAL Nº 01/2026 – INCT COESA
+          </p>
+          
+          <div class="institution-badge">
+            <span>🌿</span> INCT COESA • Universidade de São Paulo (USP)
+          </div>
+        </header>
+        
+        <!-- SECTION 1: Carta de Apresentação -->
+        <section class="portfolio-section cover-letter-section" id="cover-letter-section">
+          <div class="section-header">
+            <div class="section-heading-wrapper">
+              <span class="section-icon">📝</span>
+              <h2 class="section-title">Carta de Apresentação (Máx. 2 páginas)</h2>
+            </div>
+          </div>
+          
+          <div class="cover-letter-box">
+            <div class="template-selector">
+              <span style="font-size: 12px; font-weight: 600; color: var(--text-muted); align-self: center; margin-right: 8px;">Modelos Rápidos:</span>
+              <button class="template-chip active" onclick="app.loadLetterTemplate(1)">Modelo 1: Saúde Única</button>
+              <button class="template-chip" onclick="app.loadLetterTemplate(2)">Modelo 2: Coexistência & Comportamento</button>
+              <button class="template-chip" onclick="app.loadLetterTemplate(3)">Limpar</button>
+            </div>
+            
+            <textarea class="letter-textarea" id="cover-letter-text" placeholder="Escreva aqui sua carta de apresentação direcionada à comissão de seleção da Profa. Dra. Patrícia Izar, abordando sua experiência anterior em divulgação científica, sua motivação e a relação com os temas do projeto (Saúde Única, Coexistência, Antropização)..." onblur="app.saveField('cover-letter-text')"></textarea>
+          </div>
+        </section>
+        
+        <hr class="section-divider">
+        
+        <!-- SECTION 2: Perfil do Candidato -->
+        <section class="portfolio-section" id="profile-section">
+          <div class="section-header">
+            <div class="section-heading-wrapper">
+              <span class="section-icon">👤</span>
+              <h2 class="section-title">Perfil do Candidato</h2>
+            </div>
+          </div>
+          
+          <div class="profile-card">
+            <div class="profile-avatar-wrapper">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=300" alt="Avatar do Candidato" class="profile-avatar" id="profile-avatar-img">
+              <div class="change-avatar-overlay" onclick="app.openAvatarModal()">Alterar Foto</div>
+            </div>
+            
+            <div class="profile-info">
+              <h3 class="profile-name editable-field" contenteditable="true" id="profile-name-text" onblur="app.saveField('profile-name-text')">
+                Nome do Candidato
+              </h3>
+              <p class="profile-role editable-field" contenteditable="true" id="profile-title-text" onblur="app.saveField('profile-title-text')">
+                Mestre em Neurociências / Divulgador Científico
+              </p>
+              <p class="profile-bio editable-field" contenteditable="true" id="profile-bio-text" onblur="app.saveField('profile-bio-text')">
+                Pesquisador e comunicador apaixonado pela tradução de conceitos complexos de neurobiologia, etologia e Saúde Única (One Health) para o grande público. Experiência de 3+ anos em criação de conteúdo digital, produção de reels educativos e coordenação de mídias de projetos de extensão acadêmica.
+              </p>
+              
+              <div class="profile-details-grid">
+                <div class="profile-detail-item">
+                  <span class="profile-detail-icon">🔗</span>
+                  <span>Currículo Lattes: <a contenteditable="true" id="profile-lattes-link" onblur="app.saveField('profile-lattes-link')">http://lattes.cnpq.br/0000000000000000</a></span>
+                </div>
+                <div class="profile-detail-item">
+                  <span class="profile-detail-icon">✉️</span>
+                  <span>Email: <a contenteditable="true" id="profile-email-text" onblur="app.saveField('profile-email-text')">candidato@email.com</a></span>
+                </div>
+                <div class="profile-detail-item">
+                  <span class="profile-detail-icon">📞</span>
+                  <span>Telefone: <span contenteditable="true" id="profile-phone-text" onblur="app.saveField('profile-phone-text')">(11) 99999-9999</span></span>
+                </div>
+                <div class="profile-detail-item">
+                  <span class="profile-detail-icon">📸</span>
+                  <span>Instagram: <a contenteditable="true" id="profile-insta-text" onblur="app.saveField('profile-insta-text')">@divulgacao_cientifica</a></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <hr class="section-divider">
+        
+        <!-- SECTION 3: Acervo de Mídias e Divulgação -->
+        <section class="portfolio-section" id="portfolio-section">
+          <div class="section-header">
+            <div class="section-heading-wrapper">
+              <span class="section-icon">📱</span>
+              <h2 class="section-title">Acervo de Mídias Produzidas</h2>
+            </div>
+            
+            <button class="btn btn-primary" onclick="app.openAddModal()">
+              <span>➕</span> Adicionar Produção
+            </button>
+          </div>
+          
+          <!-- Notion-like database controls -->
+          <div class="database-controls">
+            <div class="filter-group">
+              <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" class="search-input" id="search-input" placeholder="Buscar produções..." oninput="app.searchItems()">
+              </div>
+              
+              <div class="category-filter">
+                <button class="filter-chip active" id="filter-all" onclick="app.filterCategory('all')">Todas</button>
+                <button class="filter-chip" id="filter-posts" onclick="app.filterCategory('Posts')">Posts</button>
+                <button class="filter-chip" id="filter-videos" onclick="app.filterCategory('Vídeos')">Reels / Vídeos</button>
+                <button class="filter-chip" id="filter-livros" onclick="app.filterCategory('Livro')">Livros</button>
+                <button class="filter-chip" id="filter-posters" onclick="app.filterCategory('Pôsters')">Pôsters</button>
+              </div>
+            </div>
+            
+            <div class="view-toggles">
+              <button class="view-toggle-btn active" id="view-gallery-btn" onclick="app.changeView('gallery')">
+                <span>🔲</span> Galeria
+              </button>
+              <button class="view-toggle-btn" id="view-list-btn" onclick="app.changeView('list')">
+                <span>📋</span> Lista Acadêmica
+              </button>
+            </div>
+          </div>
+          
+          <!-- Dynamic Portfolio Database Views -->
+          <div class="portfolio-database-container">
+            
+            <!-- 1. Notion Cards Gallery View -->
+            <div class="portfolio-grid" id="portfolio-gallery-view">
+              <!-- Dynamically populated via JS -->
+            </div>
+            
+            <!-- 2. Notion List Table View -->
+            <div class="list-view-container" id="portfolio-list-view" style="display: none;">
+              <table class="portfolio-table">
+                <thead>
+                  <tr>
+                    <th>Data</th>
+                    <th>Tipo</th>
+                    <th>Título da Produção</th>
+                    <th>Descrição / Tema</th>
+                    <th>QR / Link</th>
+                    <th>Ações</th>
+                  </tr>
+                </thead>
+                <tbody id="portfolio-table-body">
+                  <!-- Dynamically populated via JS -->
+                </tbody>
+              </table>
+            </div>
+            
+          </div>
+        </section>
+        
+      </div>
+      
+    </main>
+    
+  </div>
+  
+  <!-- MODAL: Adicionar / Editar Item -->
+  <div class="modal-overlay" id="item-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-title-text">Adicionar Produção</h3>
+        <button class="modal-close-btn" onclick="app.closeModal('item-modal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="item-form" onsubmit="app.saveItem(event)">
+          <input type="hidden" id="item-id">
+          
+          <div class="form-group">
+            <label class="form-label" for="item-type-select">Tipo de Mídia</label>
+            <select class="form-select" id="item-type-select" required>
+              <option value="Post">Post no Instagram</option>
+              <option value="Reel">Instagram Reel / Vídeo</option>
+              <option value="Book">Livro ou Capítulo</option>
+              <option value="Poster">Pôster Acadêmico</option>
+              <option value="Other">Outra Produção</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="item-title-input">Título / Data da Publicação</label>
+            <input type="text" class="form-input" id="item-title-input" placeholder="Ex: Publicação partilhada a 16 de julho de 2024" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="item-date-input">Data (DD/MM/AAAA)</label>
+            <input type="text" class="form-input" id="item-date-input" placeholder="Ex: 16/07/2024" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="item-url-input">URL Link (Instagram, Drive, etc.)</label>
+            <input type="url" class="form-input" id="item-url-input" placeholder="https://www.instagram.com/..." required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="item-desc-input">Descrição / Resumo do Conteúdo</label>
+            <textarea class="form-textarea" id="item-desc-input" placeholder="Descreva brevemente o tema abordado (Ex: Neurobiologia do estresse e sua relação com a Saúde Única)" required></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Imagem do QR Code / Capa</label>
+            <div class="file-upload-dropzone" id="qr-dropzone" onclick="app.triggerQrUpload()">
+              <span class="upload-icon">📁</span>
+              <p class="upload-text" id="qr-upload-status">Clique para selecionar imagem</p>
+              <p class="upload-subtext">PNG ou JPG (Deixe vazio para usar QR padrão)</p>
+              <input type="file" id="qr-file-input" style="display: none;" accept="image/*" onchange="app.handleQrUpload(event)">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="app.closeModal('item-modal')">Cancelar</button>
+        <button class="btn btn-primary" type="submit" form="item-form">Salvar</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- MODAL: Alterar Capa -->
+  <div class="modal-overlay" id="cover-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Alterar Imagem de Capa</h3>
+        <button class="modal-close-btn" onclick="app.closeModal('cover-modal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label" for="cover-url-input">URL da Imagem de Capa</label>
+          <input type="url" class="form-input" id="cover-url-input" placeholder="Insira o link da imagem (ou use o padrão)">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Modelos Temáticos</label>
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 10px;">
+            <div style="cursor: pointer; border: 2px solid var(--accent-color); border-radius: 4px; overflow: hidden; height: 60px;" onclick="app.selectDefaultCover('assets/cover.png')">
+              <img src="assets/cover.png" style="width: 100%; height: 100%; object-fit: cover;" alt="Saúde Única Cover">
+            </div>
+            <div style="cursor: pointer; border: 1px solid var(--border-color); border-radius: 4px; overflow: hidden; height: 60px;" onclick="app.selectDefaultCover('https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&fit=crop&q=80&w=600')">
+              <img src="https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&fit=crop&q=80&w=600" style="width: 100%; height: 100%; object-fit: cover;" alt="Brain Connections">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="app.closeModal('cover-modal')">Cancelar</button>
+        <button class="btn btn-primary" onclick="app.saveCover()">Salvar</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- MODAL: Alterar Foto do Perfil -->
+  <div class="modal-overlay" id="avatar-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Alterar Foto do Candidato</h3>
+        <button class="modal-close-btn" onclick="app.closeModal('avatar-modal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label" for="avatar-url-input">URL da Foto do Perfil</label>
+          <input type="url" class="form-input" id="avatar-url-input" placeholder="Insira o link da imagem (Ex: Unsplash, Drive público...)">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Carregar Arquivo Local</label>
+          <div class="file-upload-dropzone" onclick="document.getElementById('avatar-file-input').click()">
+            <span class="upload-icon">👤</span>
+            <p class="upload-text" id="avatar-upload-status">Clique para selecionar foto</p>
+            <input type="file" id="avatar-file-input" style="display: none;" accept="image/*" onchange="app.handleAvatarUpload(event)">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="app.closeModal('avatar-modal')">Cancelar</button>
+        <button class="btn btn-primary" onclick="app.saveAvatar()">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
