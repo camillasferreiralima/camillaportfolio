@@ -1,306 +1,171 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfólio de Divulgação Científica | INCT COESA</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio di Divulgazione Scientifica - Camilla</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  
   <div class="app-container">
-    
-    <!-- Notion-like Sidebar -->
     <aside class="sidebar">
       <div class="sidebar-brand">
-        <span class="sidebar-logo">🧠</span>
-        <span class="sidebar-title">INCT COESA</span>
+        <div class="sidebar-logo"></div>
+        <span class="sidebar-title">Camilla</span>
       </div>
-      
+
       <ul class="sidebar-menu">
-        <li class="sidebar-menu-item" id="menu-letter">
-          <a onclick="app.scrollToSection('cover-letter-section')">
-            <span class="sidebar-menu-icon">📝</span>
-            <span class="sidebar-menu-item-text">Carta Apresentação</span>
-          </a>
-        </li>
-        <li class="sidebar-menu-item" id="menu-profile">
-          <a onclick="app.scrollToSection('profile-section')">
-            <span class="sidebar-menu-icon">👤</span>
-            <span class="sidebar-menu-item-text">Perfil do Candidato</span>
-          </a>
-        </li>
-        <li class="sidebar-menu-item active" id="menu-portfolio">
-          <a onclick="app.scrollToSection('portfolio-section')">
-            <span class="sidebar-menu-icon">📚</span>
-            <span class="sidebar-menu-item-text">Acervo de Mídias</span>
+        <li class="sidebar-menu-item">
+          <a href="#cover-letter-section">
+            <span class="sidebar-menu-item-text">Carta di Presentazione</span>
           </a>
         </li>
         <li class="sidebar-menu-item">
-          <a onclick="app.filterCategory('Posts')">
-            <span class="sidebar-menu-icon">📸</span>
-            <span class="sidebar-menu-item-text">Instagram Posts</span>
+          <a href="#profile-section">
+            <span class="sidebar-menu-item-text">Profilo</span>
           </a>
         </li>
-        <li class="sidebar-menu-item">
-          <a onclick="app.filterCategory('Vídeos')">
-            <span class="sidebar-menu-icon">🎬</span>
-            <span class="sidebar-menu-item-text">Instagram Reels</span>
-          </a>
-        </li>
-        <li class="sidebar-menu-item">
-          <a onclick="app.filterCategory('Livro')">
-            <span class="sidebar-menu-icon">📖</span>
-            <span class="sidebar-menu-item-text">Livros & Capítulos</span>
-          </a>
-        </li>
-        <li class="sidebar-menu-item">
-          <a onclick="app.filterCategory('Pôsters')">
-            <span class="sidebar-menu-icon">📊</span>
-            <span class="sidebar-menu-item-text">Pôsters Científicos</span>
+        <li class="sidebar-menu-item active">
+          <a href="#portfolio-section">
+            <span class="sidebar-menu-item-text">Database</span>
           </a>
         </li>
       </ul>
-      
+
       <div class="sidebar-footer">
-        <button class="btn btn-primary btn-block" onclick="window.print()">
-          <span>📄</span> Exportar PDF (Concurso)
-        </button>
-        <div class="sidebar-footer-info">
-          <small>Edital Nº 01/2026</small>
-        </div>
+        <button class="btn btn-primary btn-block" onclick="window.print()">Esporta PDF</button>
       </div>
     </aside>
-    
-    <!-- Main Content Area -->
+
     <main class="main-content">
-      
-      <!-- Page Cover Header -->
       <div class="cover-wrapper">
-        <img src="cover.png" alt="Neuroscience and One Health Cover Banner" class="cover-image" id="page-cover-img">
-        <div class="cover-overlay">
-          <button class="change-cover-btn" onclick="app.changeCover()">
-            <span>🖼️</span> Alterar Capa
-          </button>
-        </div>
+        <img src="cover.png" alt="Cover" class="cover-image" id="page-cover-img" />
       </div>
-      
-      <!-- Page Cover Emoji -->
-      <div class="page-emoji-container" id="page-emoji-btn">📢</div>
-      
-      <!-- Inner Content Container -->
+
       <div class="content-container">
-        
-        <!-- Document Title Block -->
         <header class="page-title-section">
-          <h1 class="page-title editable-field" contenteditable="true" id="portfolio-main-title">Portfólio de Divulgação Científica</h1>
-          <p class="page-description editable-field" contenteditable="true" id="portfolio-main-subtitle">Candidatura à Bolsa de Apoio à Difusão do Conhecimento (ADC-1B) • EDITAL Nº 01/2026 – INCT COESA</p>
-          
+          <h1 class="page-title">Portfolio di Divulgazione Scientifica</h1>
+          <p class="page-description">Candidatura e raccolta dei contenuti di Camilla.</p>
           <div class="institution-badge">
-            <span>🎓</span> INCT COESA • Universidade de São Paulo (USP)
+            <span>Camilla</span>
           </div>
         </header>
-        
-        <!-- SECTION 1: Carta de Apresentação -->
+
         <section class="portfolio-section cover-letter-section" id="cover-letter-section">
           <div class="section-header">
-            <div class="section-heading-wrapper">
-              <span class="section-icon">📝</span>
-              <h2 class="section-title">Carta de Apresentação (Máx. 2 páginas)</h2>
-            </div>
+            <h2 class="section-title">Carta di Presentazione</h2>
           </div>
-          
+
           <div class="cover-letter-box">
-            <div class="template-selector">
-              <span class="template-chip active" onclick="app.loadTemplate('default')">Padrão</span>
-              <span class="template-chip" onclick="app.loadTemplate('motivation')">Motivação</span>
-              <span class="template-chip" onclick="app.loadTemplate('experience')">Experiência</span>
+            <div class="letter-static">
+              <p>
+                Inserisci qui il testo definitivo della tua lettera di presentazione.
+                Questo testo è bloccato e non modificabile dalla pagina.
+              </p>
             </div>
-            
-            <textarea class="letter-textarea" id="cover-letter-text" placeholder="Escreva aqui sua carta de apresentação direcionada à comissão de seleção da Profa. Dra. Patrícia Izar, abordando sua experiência anterior em divulgação científica, sua motivação e a relação com os temas do projeto (Saúde Única, Coexistência, Antropização)..."></textarea>
           </div>
         </section>
-        
-        <hr class="section-divider">
-        
-        <!-- SECTION 2: Perfil do Candidato -->
+
+        <hr class="section-divider" />
+
         <section class="portfolio-section" id="profile-section">
           <div class="section-header">
-            <div class="section-heading-wrapper">
-              <span class="section-icon">👤</span>
-              <h2 class="section-title">Perfil do Candidato</h2>
-            </div>
+            <h2 class="section-title">Profilo del Candidato</h2>
           </div>
-          
+
           <div class="profile-card">
             <div class="profile-avatar-wrapper">
-              <img src="profile.jpg" alt="Foto do Candidato" class="profile-avatar" id="profile-avatar">
-              <div class="change-avatar-overlay" onclick="app.changeAvatar()">
-                ALTERAR FOTO
-              </div>
+              <img src="avatar.png" alt="Foto profilo" class="profile-avatar" id="profile-avatar-img" />
             </div>
-            
+
             <div class="profile-info">
-              <div class="profile-name editable-field" contenteditable="true" id="profile-name">Nome do Candidato</div>
-              <div class="profile-role editable-field" contenteditable="true" id="profile-role">Biólogo / Divulgador Científico</div>
-              <div class="profile-bio editable-field" contenteditable="true" id="profile-bio">
-                Breve descrição sobre sua formação acadêmica, experiência em divulgação científica e interesse pelas áreas de Neurociência, Comportamento Animal e Saúde Única.
-              </div>
-              
+              <h3 class="profile-name">Camilla</h3>
+              <p class="profile-role">Divulgatrice scientifica</p>
+              <p class="profile-bio">
+                Testo profilo bloccato. Qui puoi lasciare una breve descrizione di Camilla.
+              </p>
+
               <div class="profile-details-grid">
                 <div class="profile-detail-item">
-                  <span class="profile-detail-icon">📧</span>
-                  <span class="editable-field" contenteditable="true" id="profile-email">email@usp.br</span>
+                  <span class="profile-detail-label">Curriculum</span>
+                  <span class="profile-detail-value">Collega il CV o lascialo come testo fisso.</span>
                 </div>
+
                 <div class="profile-detail-item">
-                  <span class="profile-detail-icon">🔗</span>
-                  <a href="#" id="profile-lattes">Currículo Lattes</a>
+                  <span class="profile-detail-label">Email</span>
+                  <span class="profile-detail-value">Inserisci l'email qui.</span>
                 </div>
+
                 <div class="profile-detail-item">
-                  <span class="profile-detail-icon">📱</span>
-                  <span class="editable-field" contenteditable="true" id="profile-instagram">@instagram</span>
-                </div>
-                <div class="profile-detail-item">
-                  <span class="profile-detail-icon">🎓</span>
-                  <span class="editable-field" contenteditable="true" id="profile-formation">Doutorando em ...</span>
+                  <span class="profile-detail-label">Telefono</span>
+                  <span class="profile-detail-value">Inserisci il telefono qui.</span>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        
-        <hr class="section-divider">
-        
-        <!-- SECTION 3: Acervo de Mídias (Portfolio Database) -->
+
+        <hr class="section-divider" />
+
         <section class="portfolio-section" id="portfolio-section">
           <div class="section-header">
             <div class="section-heading-wrapper">
-              <span class="section-icon">📚</span>
-              <h2 class="section-title">Acervo de Mídias</h2>
+              <h2 class="section-title">Database</h2>
             </div>
-            <button class="btn btn-teal" onclick="app.openAddModal()">
-              <span>➕</span> Adicionar Produção
-            </button>
+            <button class="btn btn-primary" onclick="app.openAddModal()">Aggiungi contenuto</button>
           </div>
-          
-          <!-- Database Controls -->
+
           <div class="database-controls">
             <div class="filter-group">
               <div class="search-box">
-                <span class="search-icon">🔍</span>
-                <input type="text" class="search-input" placeholder="Buscar produções..." id="search-input" oninput="app.handleSearch(this.value)">
+                <input type="text" class="search-input" id="search-input" placeholder="Cerca contenuti..." oninput="app.searchItems()" />
               </div>
-              
-              <div class="category-filter" id="category-filters">
-                <span class="filter-chip active" onclick="app.filterCategory('all')">Todos</span>
-                <span class="filter-chip" onclick="app.filterCategory('Posts')">Posts</span>
-                <span class="filter-chip" onclick="app.filterCategory('Vídeos')">Reels</span>
-                <span class="filter-chip" onclick="app.filterCategory('Livro')">Livros</span>
-                <span class="filter-chip" onclick="app.filterCategory('Pôsters')">Pôsters</span>
+              <div class="category-filter">
+                <button class="filter-chip active" id="filter-all" onclick="app.filterCategory('all')">Tutti</button>
+                <button class="filter-chip" onclick="app.filterCategory('posts')">Post</button>
+                <button class="filter-chip" onclick="app.filterCategory('videos')">Video</button>
+                <button class="filter-chip" onclick="app.filterCategory('books')">Libri</button>
+                <button class="filter-chip" onclick="app.filterCategory('posters')">Poster</button>
               </div>
             </div>
-            
-            <div class="view-toggles">
-              <button class="view-toggle-btn active" id="view-gallery" onclick="app.setView('gallery')">
-                <span>▦</span> Galeria
-              </button>
-              <button class="view-toggle-btn" id="view-list" onclick="app.setView('list')">
-                <span>☰</span> Lista
-              </button>
+          </div>
+
+          <div class="portfolio-database-container">
+            <div class="portfolio-grid" id="portfolio-gallery-view">
+              <article class="portfolio-card-item">
+                <div class="card-media-wrapper">
+                  <img src="qr-placeholder.png" alt="QR Code" class="card-qr-img" />
+                  <div class="card-media-overlay">
+                    <span class="qr-scan-instruction">Scansiona il QR</span>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="card-meta">
+                    <span class="card-date">2026</span>
+                    <span class="badge badge-post">Post</span>
+                  </div>
+                  <h4 class="card-title">Contenuto di esempio</h4>
+                  <p class="card-desc">Qui puoi aggiungere nuovi libri, QR code o contenuti del database.</p>
+                  <div class="card-actions">
+                    <a href="#" target="_blank" class="card-link-btn card-link-btn-primary">Apri link</a>
+                    <button class="card-edit-btn" onclick="app.openEditModal('item')">Modifica</button>
+                  </div>
+                </div>
+              </article>
             </div>
           </div>
-          
-          <!-- Gallery View -->
-          <div class="portfolio-grid" id="portfolio-grid">
-            <!-- Cards will be rendered by JS -->
-          </div>
-          
-          <!-- List View (Hidden by default) -->
-          <div class="list-view-container" id="list-view" style="display: none;">
-            <table class="portfolio-table">
-              <thead>
-                <tr>
-                  <th>Data</th>
-                  <th>Tipo</th>
-                  <th>Título</th>
-                  <th>Descrição</th>
-                  <th>QR Code</th>
-                  <th>Ações</th>
-                </tr>
-              </thead>
-              <tbody id="portfolio-table-body">
-                <!-- Rows will be rendered by JS -->
-              </tbody>
-            </table>
-          </div>
-          
         </section>
-        
       </div>
     </main>
   </div>
-  
-  <!-- Add/Edit Modal -->
-  <div class="modal-overlay" id="production-modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title" id="modal-title">Adicionar Produção</h3>
-        <button class="modal-close-btn" onclick="app.closeModal()">✕</button>
-      </div>
-      
-      <div class="modal-body">
-        <form id="production-form">
-          <div class="form-group">
-            <label class="form-label">Tipo de Mídia</label>
-            <select class="form-select" id="form-type" required>
-              <option value="Post no Instagram">📸 Post no Instagram</option>
-              <option value="Reel Vídeo Educativo">🎬 Reel Vídeo Educativo</option>
-              <option value="Post Divulgação Científica">🔬 Post Divulgação Científica</option>
-              <option value="Livro ou Capítulo">📖 Livro ou Capítulo</option>
-              <option value="Pôster Científico">📊 Pôster Científico</option>
-              <option value="Outro">📌 Outro</option>
-            </select>
-          </div>
-          
-          <div class="form-group">
-            <label class="form-label">Título / Data de Publicação</label>
-            <input type="text" class="form-input" id="form-title" placeholder="Ex: 'Publicação partilhada a 16'" required>
-          </div>
-          
-          <div class="form-group">
-            <label class="form-label">Data (DD/MM/AAAA)</label>
-            <input type="text" class="form-input" id="form-date" placeholder="Ex: 16/07/2024" required>
-          </div>
-          
-          <div class="form-group">
-            <label class="form-label">URL Link (Instagram, Drive, etc.)</label>
-            <input type="url" class="form-input" id="form-url" placeholder="https://www.instagram.com/..." required>
-          </div>
-          
-          <div class="form-group">
-            <label class="form-label">Descrição / Resumo do Conteúdo</label>
-            <textarea class="form-textarea" id="form-desc" placeholder="Descreva brevemente o tema abordado..."></textarea>
-          </div>
-          
-          <div class="form-group">
-            <label class="form-label">Imagem do QR Code / Capa</label>
-            <div class="file-upload-dropzone" id="dropzone" onclick="app.triggerFileInput()">
-              <div class="upload-icon">📁</div>
-              <div class="upload-text">Clique para selecionar imagem</div>
-              <div class="upload-subtext">PNG ou JPG (Deixe vazio para usar QR padrão)</div>
-              <input type="file" id="file-input" accept="image/*" style="display: none;" onchange="app.handleFileSelect(this)">
-            </div>
-          </div>
-        </form>
-      </div>
-      
-      <div class="modal-footer">
-        <button class="btn btn-secondary" onclick="app.closeModal()">Cancelar</button>
-        <button class="btn btn-primary" onclick="app.saveProduction()">Salvar Produção</button>
-      </div>
-    </div>
-  </div>
-  
-  <script src="app.js"></script>
+
+  <script>
+    window.app = {
+      openAddModal() {},
+      openEditModal() {},
+      filterCategory() {},
+      searchItems() {}
+    };
+  </script>
 </body>
 </html>
