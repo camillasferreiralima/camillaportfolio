@@ -291,7 +291,7 @@ h1, h2, h3, h4, .outfit-font {
 }
 
 /* Notion Page Cover Emoji */
-.page-emoji-container {
+.page-emoji-container { display: none;
   position: absolute;
   left: 48px;
   bottom: -40px;
@@ -319,7 +319,7 @@ h1, h2, h3, h4, .outfit-font {
   max-width: var(--max-content-width);
   width: 100%;
   margin: 0 auto;
-  padding: 60px 48px 80px 48px;
+  padding: 30px 48px 80px 48px;
   position: relative;
 }
 
@@ -1287,7 +1287,7 @@ h1, h2, h3, h4, .outfit-font {
   }
   
   /* Profile header for Print */
-  .page-emoji-container {
+  .page-emoji-container { display: none;
     border-color: white !important;
     bottom: -30px !important;
     left: 20px !important;
